@@ -1,0 +1,256 @@
+﻿@using EmpressOfLight.Models.ViewModels
+@model ShopFilter 
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Fruitables - Vegetable Website Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Single Page Header start -->
+        <div class="container-fluid page-header" style="height: 50%;">
+        </div>
+        <!-- Single Page Header End -->
+
+
+        <!-- Fruits Shop Start-->
+        <div class="container-fluid fruite py-5">
+            <div class="container py-5">
+                <h1 class="mb-4">Fresh fruits shop</h1>
+                <div class="row g-4">
+
+                    <div class="col-lg-12">
+                    <form asp-controller="Shop" asp-action="index" method="get">
+
+                    <div class="row g-4 align-items-center">
+
+                            <input name="categoryId" type="hidden" value="@Model.CategoryId" />
+                        <!-- Range Slider -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="mb-3">
+                                <h4 class="mb-2">Price</h4>
+                                <input name="pricemin" type="number" id="priceminid" value="@Model.PriceMin">
+                                <label for="priceminid">Min</label>
+                                <br/>
+                                    <input name="pricemax" type="number" id="pricemaxid" value="@Model.PriceMax">
+                                <label for="priceminid">Max</label>
+
+                            </div>
+                        </div>
+                        
+
+                        <!-- Search Input -->
+                        <div class="col-xl-6 col-lg-4 col-md-6">
+                            <div class="input-group w-100 mx-auto d-flex">
+                                <input value="@Model.Name" name="name" type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                                <span id="search-icon-1" class="input-group-text p-3"><button type="submit" class="fa fa-search"></button></span>
+                            </div>
+                        </div>
+
+                        <!-- Dropdown -->
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="bg-light ps-3 py-3 rounded d-flex justify-content-between">
+                                <label for="fruits">Default Sorting:</label>
+                                        
+
+                                <select id="Sort" name="Sort" class="border-0 form-select-sm bg-light me-3" onchange="this.form.submit()">
+                                    <option value="0"></option>
+                                    <option value="3">Price low to high</option>
+                                    <option value="4">Price high to low</option>
+                                    <option value="1">A -> Z</option>
+                                    <option value="2">Z -> A</option>
+                                </select>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+
+                        <div class="row g-4">
+                            <div class="col-lg-3">
+                                <div class="row g-4">
+                                    <div class="pagination" id="pagination">
+                                        <!-- Pagination links will be displayed here -->
+                                    </div>
+                                
+                                 
+                       
+                                    
+                                    <div class="col-lg-12">
+                                        <div class="mb-3">
+                                            <h4>Categories</h4>
+                                        <form asp-controller="Shop" asp-action="Index" method="get">
+                                            <input name="name" type="hidden" value="@Model.Name" />
+                                            <input name="pricemin" type="hidden" value="@Model.PriceMin" />
+                                            <input name="pricemax" type="hidden" value="@Model.PriceMax" />
+                                        @{
+                                                <div class="mb-2">
+                                                    <input type="radio" name="categoryId" class="me-2" value="0" id="allthings" onchange="this.form.submit()" @(Model.CategoryId == 0 ? "checked" : "")>
+                                                    <label for="allthings"> All</label>
+                                                </div>
+                                            foreach(var p in Model.categories)
+                                            {
+                                                    <div class="mb-2">
+                                                        <input type="radio" name="categoryId" class="me-2" value="@p.CategoryId" id="Category_@p.CategoryName" onchange="this.form.submit()" @(Model.CategoryId == p.CategoryId ? "checked" : "")>
+                                                        <label for="Categories-@p.CategoryId"> @p.CategoryName</label>
+                                                    </div>
+                                            }
+                                        }
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <h4 class="mb-3">Featured products</h4>
+                                        <div class="d-flex align-items-center justify-content-start">
+                                            <div class="rounded me-4" style="width: 100px; height: 100px;">
+                                                <img src="img/featur-1.jpg" class="img-fluid rounded" alt="">
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-2">Big Banana</h6>
+                                                <div class="d-flex mb-2">
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <div class="d-flex mb-2">
+                                                    <h5 class="fw-bold me-2">2.99 $</h5>
+                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-start">
+                                            <div class="rounded me-4" style="width: 100px; height: 100px;">
+                                                <img src="img/featur-2.jpg" class="img-fluid rounded" alt="">
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-2">Big Banana</h6>
+                                                <div class="d-flex mb-2">
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <div class="d-flex mb-2">
+                                                    <h5 class="fw-bold me-2">2.99 $</h5>
+                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-start">
+                                            <div class="rounded me-4" style="width: 100px; height: 100px;">
+                                                <img src="img/featur-3.jpg" class="img-fluid rounded" alt="">
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-2">Big Banana</h6>
+                                                <div class="d-flex mb-2">
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star text-secondary"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                                <div class="d-flex mb-2">
+                                                    <h5 class="fw-bold me-2">2.99 $</h5>
+                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-center my-4">
+                                            <a href="#" class="btn border border-secondary px-4 py-3 rounded-pill text-primary w-100">Vew More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="position-relative">
+                                            <img src="img/banner-fruits.jpg" class="img-fluid w-100 rounded" alt="">
+                                            <div class="position-absolute" style="top: 50%; right: 10px; transform: translateY(-50%);">
+                                                <h3 class="text-secondary fw-bold">Fresh <br> Fruits <br> Banner</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="row g-4 justify-content-center" id="product-list">
+
+                                 @{
+                                    foreach(var p in Model.products)
+                                    {
+                                        <a asp-controller="Product" asp-action="Index" asp-route-productid="@p.ProductId" asp-route-id="@p.ProductName" class="col-md-6 col-lg-6 col-xl-4">
+                                            <div class="rounded position-relative fruite-item">
+                                                <div class="fruite-img">
+                                                    <img src="@p.ProductImgPreview" class="img-fluid w-100 rounded-top" alt="">
+                                                </div>
+                                                <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
+                                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                                    <h4>@p.ProductName</h4>
+                                                    <p>@p.ShortDescription</p>
+                                                    <div class="d-flex flex-column justify-content-center align-items-center">
+                                                        <p class="text-dark fs-5 fw-bold mb-0">@p.PricePreview vnđ</p>
+                                                            <button style="text-align: center;" type="submit" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> View Product</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    }
+                                }
+                                </div>
+
+                            <nav aria-label="Page navigation example">
+                                <form method="get" asp-controller="Shop" asp-action="Index" id="paginationForm">
+                                    <input name="name" type="hidden" value="@Model.Name" />
+                                    <input name="pricemin" type="hidden" value="@Model.PriceMin" />
+                                    <input name="pricemax" type="hidden" value="@Model.PriceMax" />
+                                    <input name="Sort" type="hidden" value="@Model.Sort" />
+                                    <input name="categoryId" type="hidden" value="@Model.CategoryId" />
+                                    <input name="page" type="hidden" id="page" value="@Model.Page" />
+                                <ul class="pagination" style="display: flex; flex-wrap: nowrap; justify-content: center;">
+                                    
+
+                                    <li style="@(Model.Page == 0 ? "display: none;" : "")" class="page-item">
+                                        <a class="page-link" href="#" onclick="document.getElementById('page').value=@(Model.Page - 1); document.getElementById('paginationForm').submit(); return false;">&lt;</a>
+                                    </li>
+                                    <select style="width:50pt; border-color: orange; margin-right: 3pt; text-align:center;" onchange="document.getElementById('page').value=this.value; document.getElementById('paginationForm').submit();">
+                                            @{
+                                            for(int i=0; i<Model.TotalPage; i++)
+                                            {
+                                                <option value="@i"> @i/@Model.TotalPage </option>
+                                            }
+                                        }
+                                    </select>
+                                    <li style="@(Model.Page == (Model.TotalPage - 1) ? "display: none;" : "")" class="page-item">
+                                        <a class="page-link" href="#" onclick="document.getElementById('page').value=@(Model.Page + 1); document.getElementById('paginationForm').submit(); return false;">&gt;</a>
+                                    </li>
+                                    
+                                </ul>
+                                </form>
+                            </nav>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fruits Shop End-->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+    </body>
+</html>

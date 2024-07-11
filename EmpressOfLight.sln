@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmpressOfLight", "EmpressOfLight\EmpressOfLight.csproj", "{5F5FF056-9EC2-4A99-AA7B-B1A82C9379D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F5FF056-9EC2-4A99-AA7B-B1A82C9379D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F5FF056-9EC2-4A99-AA7B-B1A82C9379D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F5FF056-9EC2-4A99-AA7B-B1A82C9379D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F5FF056-9EC2-4A99-AA7B-B1A82C9379D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20B9467D-B117-4222-B8F1-8446CBE591C0}
+	EndGlobalSection
+EndGlobal

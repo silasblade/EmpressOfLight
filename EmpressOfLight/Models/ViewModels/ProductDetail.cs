@@ -8,5 +8,6 @@
         public Size SelectedSize = new Size();
         public bool SelectSize = false;
         public string CategoryName;
+        public List<Category> Categories = new List<Category>();
     }
 }

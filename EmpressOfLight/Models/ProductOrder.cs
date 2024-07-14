@@ -13,8 +13,8 @@ namespace EmpressOfLight.Models
         [ForeignKey("Order")]
         public int OrderId { get; set; }
 
-        [ForeignKey("Product")]
-        public int ProductId { get; set; }
+        [ForeignKey("Size")]
+        public string SizeId { get; set; }
 
         public int Quantity { get; set; }
 
@@ -22,6 +22,6 @@ namespace EmpressOfLight.Models
 
         public Order Order { get; set; }
 
-        public Product Product { get; set; }
+        public Size Size { get; set; }
     }
 }

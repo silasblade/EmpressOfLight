@@ -465,6 +465,10 @@
       "PackagePath": "staticwebassets\\lib\\waypoints\\waypoints.min.js"
     },
     {
+      "Id": "C:\\Users\\visha\\source\\repos\\EmpressOfLight\\EmpressOfLight\\wwwroot\\productimgs\\18.jpeg",
+      "PackagePath": "staticwebassets\\productimgs\\18.jpeg"
+    },
+    {
       "Id": "C:\\Users\\visha\\source\\repos\\EmpressOfLight\\EmpressOfLight\\wwwroot\\scss\\bootstrap.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap.scss"
     },

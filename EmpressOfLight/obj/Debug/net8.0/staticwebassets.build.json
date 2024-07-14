@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aGbYvaO8mvrZeqwBkxmGrYyyM+iR/xErmAb0XXn/h1U=",
+  "Hash": "4c3c2TYLcG1mDo40Or0agAKMzfvcsatvqURiunZ9CDU=",
   "Source": "EmpressOfLight",
   "BasePath": "_content/EmpressOfLight",
   "Mode": "Default",
@@ -3378,6 +3378,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\waypoints\\waypoints.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\visha\\source\\repos\\EmpressOfLight\\EmpressOfLight\\wwwroot\\productimgs\\18.jpeg",
+      "SourceId": "EmpressOfLight",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\visha\\source\\repos\\EmpressOfLight\\EmpressOfLight\\wwwroot\\",
+      "BasePath": "_content/EmpressOfLight",
+      "RelativePath": "productimgs/18.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\productimgs\\18.jpeg"
     },
     {
       "Identity": "C:\\Users\\visha\\source\\repos\\EmpressOfLight\\EmpressOfLight\\wwwroot\\scss\\bootstrap.scss",

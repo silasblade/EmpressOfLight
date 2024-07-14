@@ -184,6 +184,10 @@ namespace EmpressOfLight.Migrations
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -204,6 +208,10 @@ namespace EmpressOfLight.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -290,17 +298,18 @@ namespace EmpressOfLight.Migrations
                     b.Property<float>("Price")
                         .HasColumnType("real");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
+
+                    b.Property<string>("SizeId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ProductOrderId");
 
                     b.HasIndex("OrderId");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("SizeId");
 
                     b.ToTable("ProductOrders");
                 });
@@ -644,15 +653,15 @@ namespace EmpressOfLight.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EmpressOfLight.Models.Product", "Product")
+                    b.HasOne("EmpressOfLight.Models.Size", "Size")
                         .WithMany()
-                        .HasForeignKey("ProductId")
+                        .HasForeignKey("SizeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Order");
 
-                    b.Navigation("Product");
+                    b.Navigation("Size");
                 });
 
             modelBuilder.Entity("EmpressOfLight.Models.Review", b =>

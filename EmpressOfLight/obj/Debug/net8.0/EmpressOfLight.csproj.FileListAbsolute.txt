@@ -144,3 +144,4 @@ C:\Users\visha\source\repos\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\refin
 C:\Users\visha\source\repos\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.pdb
 C:\Users\visha\source\repos\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.genruntimeconfig.cache
 C:\Users\visha\source\repos\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\ref\EmpressOfLight.dll
+C:\Users\visha\source\repos\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutAdmin.cshtml.rz.scp.css

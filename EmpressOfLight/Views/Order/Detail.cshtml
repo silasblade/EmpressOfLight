@@ -14,7 +14,9 @@
             <div class="col-lg-10 col-xl-8">
                 <div class="card" style="border-radius: 10px;">
                     <div class="card-header px-4 py-5">
-                        <h5 class="text-muted mb-0">Thanks for your Order, <span style="color: #a8729a;"></span>!</h5>
+							<h5 class="text-muted mb-0">Thanks for your Order, @Model.Order.FirstName @Model.Order.LastName<span style="color: #a8729a;"></span>!</h5>
+							<h5 class="text-muted mb-0">Enail: @Model.Order.Email<span style="color: #a8729a;"></span>!</h5>
+
                     </div>
                     <div class="card-body p-4">
                         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -49,14 +51,14 @@
 										{
 											<div class="row">
 												<div class="col-md-2">
-													<img src="@p.Product.ProductImgPreview"
+													<img src="@p.Size.Product.ProductImgPreview"
 														 class="img-fluid" alt="">
 												</div>
 												<div class="col-md-2 text-center d-flex justify-content-center align-items-center">
 													<p class="text-muted mb-0"></p>
 												</div>
 												<div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-													<p class="text-muted mb-0 small">@p.Product.ProductName </p>
+													<p class="text-muted mb-0 small">@p.Size.Product.ProductName @p.Size.SizeName</p>
 												</div>
 												<div class="col-md-2 text-center d-flex justify-content-center align-items-center">
 													<p class="text-muted mb-0 small">@p.Quantity</p>

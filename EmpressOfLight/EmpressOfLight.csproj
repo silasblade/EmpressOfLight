@@ -159,6 +159,14 @@
     <Folder Include="Templates\fruitables-1.0.0\css\" />
     <Folder Include="Templates\fruitables-1.0.0\js\" />
     <Folder Include="Templates\fruitables-1.0.0\lib\" />
+    <Folder Include="wwwroot\productimgs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Shared\_LayoutAdmin.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

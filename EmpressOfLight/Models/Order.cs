@@ -29,7 +29,8 @@ namespace EmpressOfLight.Models
         public string Note { get; set; }
 
         //Checking, Confirmed, Delivering, Claimed, Canceled
-        public string Status = "Checking";
+        public string Status { get; set; }
+        public string Email { get; set; }
 
         public DateTime DateTime { get; set; }
 

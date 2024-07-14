@@ -18,7 +18,7 @@ namespace EmpressOfLight.Controllers
         public IActionResult Index()
         {
             var UserId = _userManager.GetUserId(User);
-            var Carts = _context.Carts.Include(c => c.Size).ThenInclude(m => m.Product).ToList();
+            var Carts = _context.Carts.Include(c => c.Size).ThenInclude(m => m.Product).Where(n => n.Id == UserId).ToList();
             return View(Carts);
         }
 

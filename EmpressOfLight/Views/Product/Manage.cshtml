@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+}
+@model List<Product>
+<a asp-controller="Product" asp-action="AddNewProduct" class="btn-secondary"> Add New Product </a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(var p in Model)
+            {
+                <tr>
+                    <th scope="row">@p.ProductId</th>
+                    <td><img style="width: 100px; height: 100px;" src="@p.ProductImgPreview" /></td>
+                    <td>@p.ProductName</td>
+                    <td>@p.PricePreview</td>
+                    <td><a asp-controller="Product" asp-action="Edit" asp-route-id="@p.ProductId" class="btn-primary"> Edit</a></td>
+                    <td><a asp-controller="Product" asp-action="DeleteProduct" asp-route-id="@p.ProductId" class="btn-danger"> Delete</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

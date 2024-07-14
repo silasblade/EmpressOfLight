@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EmpressOfLight.Migrations
 {
     /// <inheritdoc />
-    public partial class ini : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -264,6 +264,8 @@ namespace EmpressOfLight.Migrations
                     Total = table.Column<float>(type: "real", nullable: false),
                     Payment = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Note = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -315,33 +317,6 @@ namespace EmpressOfLight.Migrations
                     table.PrimaryKey("PK_ProductImages", x => x.ProductImageId);
                     table.ForeignKey(
                         name: "FK_ProductImages_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
-                        principalColumn: "ProductId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ProductOrders",
-                columns: table => new
-                {
-                    ProductOrderId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    OrderId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<float>(type: "real", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProductOrders", x => x.ProductOrderId);
-                    table.ForeignKey(
-                        name: "FK_ProductOrders_Orders_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "Orders",
-                        principalColumn: "OrderId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ProductOrders_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "ProductId",
@@ -420,6 +395,33 @@ namespace EmpressOfLight.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "ProductOrders",
+                columns: table => new
+                {
+                    ProductOrderId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    OrderId = table.Column<int>(type: "int", nullable: false),
+                    SizeId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<float>(type: "real", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductOrders", x => x.ProductOrderId);
+                    table.ForeignKey(
+                        name: "FK_ProductOrders_Orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Orders",
+                        principalColumn: "OrderId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProductOrders_Sizes_SizeId",
+                        column: x => x.SizeId,
+                        principalTable: "Sizes",
+                        principalColumn: "SizeId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -485,9 +487,9 @@ namespace EmpressOfLight.Migrations
                 column: "OrderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductOrders_ProductId",
+                name: "IX_ProductOrders_SizeId",
                 table: "ProductOrders",
-                column: "ProductId");
+                column: "SizeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",
@@ -559,16 +561,16 @@ namespace EmpressOfLight.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Sizes");
-
-            migrationBuilder.DropTable(
                 name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Sizes");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Categories");

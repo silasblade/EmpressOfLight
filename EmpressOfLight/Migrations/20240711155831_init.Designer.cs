@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmpressOfLight.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240711043143_ini")]
-    partial class ini
+    [Migration("20240711155831_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

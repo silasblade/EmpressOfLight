@@ -1,0 +1,142 @@
+﻿@model List<EmpressOfLight.Models.RSSFeed>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+    <meta charset="utf-8">
+    <title>News</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .containerr {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #555;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        img {
+            margin-right: 10px;
+            vertical-align: middle;
+            max-width: 400px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .hot-news {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .hot-news a {
+            text-decoration: none;
+            color: #3498db;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .hot-news a:hover {
+            color: #2980b9;
+        }
+
+        .pub-date {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .description {
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        .pagination {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #3498db;
+            color: white;
+            border: 1px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <div class="containerr">
+        <h1>Hot News</h1>
+        <div class="hot-news">
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <div>
+                            <p class="description">@Html.Raw(item.Description)</p>
+                            <a href="@item.Link" target="_blank">@item.Title</a>
+                            <p class="pub-date">@item.PubDate.ToString("dd-MM-yyyy HH:mm:ss")</p>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div class="pagination">
+            @if (ViewBag.TotalPages > 1)
+            {
+                for (int i = 1; i <= ViewBag.TotalPages; i++)
+                {
+                    <a href="@Url.Action("Index", "RSSFeed", new { page = i })" class="@(ViewBag.CurrentPage == i ? "active" : "")">@i</a>
+                }
+            }
+        </div>
+    </div>
+</body>
+</html>

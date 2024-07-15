@@ -147,8 +147,13 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="position-relative mx-auto">
-                                <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number" placeholder="Your Email">
-                                <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
+                                <form asp-action="Subscribe" asp-controller="EmailSub" method="post" class="form-inline">
+                                    @Html.AntiForgeryToken()
+                                    <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="email" name="Email" placeholder="Your Email" required />
+                                    <button type="submit" class="btn btn-primary border-0 border-secondary py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
+                                </form>
+                                <a asp-controller="EmailSub" asp-action="ExportEmails" class="btn btn-primary">Export Emails</a>
+
                             </div>
                         </div>
                         <div class="col-lg-3">
@@ -231,6 +236,27 @@
     <script src="~/lib/waypoints/waypoints.min.js"></script>
     <script src="~/lib/lightbox/js/lightbox.min.js"></script>
     <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('form').submit(function (e) {
+                e.preventDefault(); 
+
+                var form = $(this);
+                var url = form.attr('action');
+                var formData = form.serialize();
+
+                $.post(url, formData, function (response) {
+                    if (response.success) {
+                        alert(response.message); // Show alert if subscription was successful
+                    } else {
+                        alert(response.message); // Show alert if there was an error
+                    }
+                });
+            });
+        });
+    </script>
+
 
     <!-- Template Javascript -->
     <script src="~/js/main.js" asp-append-version="true"></script>

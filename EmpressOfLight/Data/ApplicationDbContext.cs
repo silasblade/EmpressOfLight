@@ -25,6 +25,7 @@ namespace EmpressOfLight.Data
         public DbSet<Size> Sizes { get; set; }
         public DbSet<AccountInfo> AccountInfos { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<EmailSub> EmailSub { get; set; }
     }
 
 }

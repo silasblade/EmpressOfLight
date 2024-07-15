@@ -1,18 +1,31 @@
 ﻿@using EmpressOfLight.Models.ViewModels
 @model ProductDetail
-
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    ViewData["Title"] = Model.Product.ProductName;
+    var absoluteUrl = ViewBag.AbsoluteUrl as string;
+    ViewData["NewTitle"] = Model.Product.ProductName;
+    ViewData["NewDes"] = Model.Product.Description;
+    ViewData["NewImage"] = Model.Product.ProductImgPreview;
+    ViewData["NewUrl"] = absoluteUrl;
+}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Fruitables - Vegetable Website Template</title>
+    <title>Empress Of Light</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+
+
 </head>
 
+
+
 <body>
+
 
     <!-- Spinner Start -->
     <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
@@ -22,6 +35,13 @@
 
     <!-- Single Page Header start -->
     <div class="container-fluid page-header">
+        <!-- Button to share on Facebook -->
+        @{
+            var posturl = "https://www.facebook.com/sharer/sharer.php?u=" + @absoluteUrl; 
+        }
+        <a href="@posturl" target="_blank">
+            Chia sẻ lên Facebook
+        </a>
     </div>
     <!-- Single Page Header End -->
     <!-- Single Product Start -->

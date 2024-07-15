@@ -145,3 +145,4 @@ C:\Users\visha\source\repos\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\Empre
 C:\Users\visha\source\repos\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.genruntimeconfig.cache
 C:\Users\visha\source\repos\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\ref\EmpressOfLight.dll
 C:\Users\visha\source\repos\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutAdmin.cshtml.rz.scp.css
+C:\Users\visha\source\repos\EmpressOfLight\EmpressOfLight\bin\Debug\net8.0\HtmlAgilityPack.dll

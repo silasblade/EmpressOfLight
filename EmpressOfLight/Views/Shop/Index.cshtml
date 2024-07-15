@@ -1,6 +1,8 @@
 ﻿@using EmpressOfLight.Models.ViewModels
 @model ShopFilter 
-
+@{
+    ViewData["Title"] = "Shop";
+}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -121,7 +123,7 @@
                                  @{
                                     foreach(var p in Model.products)
                                     {
-                                        <a asp-controller="Product" asp-action="Index" asp-route-productid="@p.ProductId" asp-route-id="@p.ProductName" class="col-md-6 col-lg-6 col-xl-4">
+                                        <a asp-controller="Product" asp-action="Index" asp-route-productid="@p.ProductId" asp-route-productname="@(p.ProductName.Replace(' ','-'))" class="col-md-6 col-lg-6 col-xl-4">
                                             <div class="rounded position-relative fruite-item">
                                                 <div class="fruite-img">
                                                     <img src="@p.ProductImgPreview" class="img-fluid w-100 rounded-top" alt="">

@@ -24,19 +24,21 @@ namespace EmpressOfLight.Controllers
             Environment = _environment;
         }
 
-        public IActionResult Index(int productid, string? sizename, string id)
+        public IActionResult Index(int productid, string? sizename, string productname)
         {
+            
             var UserId = _userManager.GetUserId(User);
             var Carts = _context.Carts.Where(c => c.Id == UserId).ToList();
             ViewBag.ShopCount = Carts.Count;
 
 
-            var p = _context.Products.FirstOrDefault(c => c.ProductId == productid);
+            var p = _context.Products.FirstOrDefault(c => c.ProductId.Equals(productid));
+            Console.WriteLine(p.ProductId);
             var l = _context.Sizes.ToList();
 
             ProductDetail productDetail = new ProductDetail();
             productDetail.Product = p;
-            productDetail.Sizes = l.Where(c => c.ProductId == p.ProductId).ToList();
+            productDetail.Sizes = l.Where(c => c.ProductId == productid).ToList();
             if(!sizename.IsNullOrEmpty())
             {
                 productDetail.SelectedSize = productDetail.Sizes.FirstOrDefault(c => c.SizeName.Equals(sizename));
@@ -52,6 +54,10 @@ namespace EmpressOfLight.Controllers
 
                 }
             }
+            var request = HttpContext.Request;
+            var absoluteUrl = $"{request.Scheme}://{request.Host}{request.Path}{request.QueryString}";
+            ViewBag.AbsoluteUrl = absoluteUrl;
+            Console.WriteLine(absoluteUrl);
             productDetail.CategoryName = _context.Categories.FirstOrDefault(c => c.CategoryId == p.CategoryId).CategoryName;
             return View(productDetail);
         }

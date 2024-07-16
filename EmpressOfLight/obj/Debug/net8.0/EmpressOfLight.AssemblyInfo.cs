@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EmpressOfLight")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bde1727bd69fefa8c413d51a963f15c018a2eac6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d468adde3dd998a7a07a571f2ac3cc6b037e3709")]
 [assembly: System.Reflection.AssemblyProductAttribute("EmpressOfLight")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EmpressOfLight")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

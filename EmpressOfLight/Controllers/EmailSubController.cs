@@ -2,7 +2,11 @@
 using EmpressOfLight.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace EmpressOfLight.Controllers
 {
@@ -19,7 +23,7 @@ namespace EmpressOfLight.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Subscribe(string Email)
+        public async Task<IActionResult> Subscribe(string Email)
         {
             if (!string.IsNullOrEmpty(Email))
             {
@@ -28,14 +32,45 @@ namespace EmpressOfLight.Controllers
                 _context.EmailSub.Add(subscription);
                 _context.SaveChanges();
 
-                return Json(new { success = true, message = "Thank you for subscribing!" });
+                var mailchimpResponse = await SubscribeToMailchimp(Email);
+
+                if (mailchimpResponse.IsSuccessStatusCode)
+                {
+                    return Json(new { success = true, message = "Thank you for subscribing!" });
+                }
+                else
+                {
+                    return Json(new { success = false, message = "Failed to subscribe to Mailchimp." });
+                }
             }
             else
             {
                 return Json(new { success = false, message = "Please enter a valid email address." });
             }
+        }
 
-            return RedirectToAction("Index", "Home");
+        private async Task<HttpResponseMessage> SubscribeToMailchimp(string email)
+        {
+            var apiKey = "b9dfc5c0742dbf29afec40261402101f-us14";
+            var listId = "0d6d5aa8fc"; 
+            var apiUrl = $"https://us14.api.mailchimp.com/3.0/lists/{listId}/members/";
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.ASCII.GetBytes($"anystring:{apiKey}")));
+
+                var memberData = new
+                {
+                    email_address = email,
+                    status = "Subscribed"
+                };
+
+                var json = JsonConvert.SerializeObject(memberData);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(apiUrl, content);
+                return response;
+            }
         }
 
         public IActionResult ExportEmails()
@@ -59,6 +94,5 @@ namespace EmpressOfLight.Controllers
         {
             return email.Trim().ToLower();
         }
-
     }
 }

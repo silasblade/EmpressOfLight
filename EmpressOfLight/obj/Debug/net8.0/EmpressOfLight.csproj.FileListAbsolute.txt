@@ -292,3 +292,4 @@ C:\Users\thanh\OneDrive\Tài liệu\Workspace\TMDT\EmpressOfLight\EmpressOfLig
 C:\Users\thanh\OneDrive\Tài liệu\Workspace\TMDT\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.pdb
 C:\Users\thanh\OneDrive\Tài liệu\Workspace\TMDT\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.genruntimeconfig.cache
 C:\Users\thanh\OneDrive\Tài liệu\Workspace\TMDT\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\ref\EmpressOfLight.dll
+C:\Users\thanh\OneDrive\Tài liệu\Workspace\TMDT\EmpressOfLight\EmpressOfLight\bin\Debug\net8.0\Newtonsoft.Json.dll

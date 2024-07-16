@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\visha\\source\\repos\\EmpressOfLight\\EmpressOfLight\\EmpressOfLight.csproj": {}
+    "D:\\TMĐT\\EmpressOfLight\\EmpressOfLight\\EmpressOfLight.csproj": {}
   },
   "projects": {
-    "C:\\Users\\visha\\source\\repos\\EmpressOfLight\\EmpressOfLight\\EmpressOfLight.csproj": {
+    "D:\\TMĐT\\EmpressOfLight\\EmpressOfLight\\EmpressOfLight.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\visha\\source\\repos\\EmpressOfLight\\EmpressOfLight\\EmpressOfLight.csproj",
+        "projectUniqueName": "D:\\TMĐT\\EmpressOfLight\\EmpressOfLight\\EmpressOfLight.csproj",
         "projectName": "EmpressOfLight",
-        "projectPath": "C:\\Users\\visha\\source\\repos\\EmpressOfLight\\EmpressOfLight\\EmpressOfLight.csproj",
-        "packagesPath": "C:\\Users\\visha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\visha\\source\\repos\\EmpressOfLight\\EmpressOfLight\\obj\\",
+        "projectPath": "D:\\TMĐT\\EmpressOfLight\\EmpressOfLight\\EmpressOfLight.csproj",
+        "packagesPath": "C:\\Users\\THANH PHONG\\.nuget\\packages\\",
+        "outputPath": "D:\\TMĐT\\EmpressOfLight\\EmpressOfLight\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\visha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\THANH PHONG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -48,23 +52,29 @@
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.3, )"
             }
           },
           "imports": [
@@ -86,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

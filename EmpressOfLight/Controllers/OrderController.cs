@@ -1,6 +1,7 @@
 ﻿using EmpressOfLight.Data;
 using EmpressOfLight.Models;
 using EmpressOfLight.Models.ViewModels;
+using EmpressOfLight.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -15,9 +16,10 @@ namespace EmpressOfLight.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
-        public OrderController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        private readonly IVnPayService _vnPayService;
+        public OrderController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IVnPayService vnPayService)
         {
-
+            _vnPayService = vnPayService;
             _context = context;
             this._userManager = userManager;
         }
@@ -71,6 +73,18 @@ namespace EmpressOfLight.Controllers
         [HttpPost]
         public IActionResult CashOrder(string FirstName, string LastName, string Phone, string Address, string PayMethod, string? Note)
         {
+            if (PayMethod == "VnPay")
+            {
+                var VnPayModel = new VnPayRequestModel
+                {
+                    Amount = _context.Products.Sum(p => p.PricePreview),
+                    CreatedDate = DateTime.Now,
+                    Description = $"{FirstName} {Phone}",
+                    FullName = FirstName+" "+LastName,
+                    OrderId = new Random().Next(1000, 100000)
+                };
+                return Redirect(_vnPayService.CreatePaymentUrl(HttpContext, VnPayModel));
+            }
 
             var userId = _userManager.GetUserId(User);
 			var usermail = _userManager.Users.FirstOrDefault(u => u.Id == _userManager.GetUserId(this.User));
@@ -103,6 +117,28 @@ namespace EmpressOfLight.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
 
+        }
+
+        [Authorize]
+        public IActionResult PaymentFail()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult PaymentCallBack()
+        {
+            var response = _vnPayService.PaymentExcecute(Request.Query);
+            if (response == null || response.VnPayResponseCode != "00")
+            {
+                TempData["Message"] = $"Lỗi thanh toán VNPay: { response.VnPayResponseCode}";
+                RedirectToAction("PaymentFail");
+            }
+
+            TempData["Message"] = $"Thanh toán VNPay thành công";
+            RedirectToAction("PaymentSuccess");
+
+            return View();
         }
     }
 }

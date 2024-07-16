@@ -1,4 +1,5 @@
 using EmpressOfLight.Data;
+using EmpressOfLight.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,9 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("RequireAdminRole",
          policy => policy.RequireRole("Admin"));
 });
+
+builder.Services.AddSingleton<IVnPayService, VnPayService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

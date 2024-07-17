@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\EmpressOfLight\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F5FF056-9EC2-4A99-AA7B-B1A82C9379D2}|EmpressOfLight\\EmpressOfLight.csproj|c:\\users\\administrator\\desktop\\empressoflight\\empressoflight\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5F5FF056-9EC2-4A99-AA7B-B1A82C9379D2}|EmpressOfLight\\EmpressOfLight.csproj|solutionrelative:empressoflight\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5F5FF056-9EC2-4A99-AA7B-B1A82C9379D2}|EmpressOfLight\\EmpressOfLight.csproj|c:\\users\\administrator\\desktop\\empressoflight\\empressoflight\\services\\twilioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F5FF056-9EC2-4A99-AA7B-B1A82C9379D2}|EmpressOfLight\\EmpressOfLight.csproj|solutionrelative:empressoflight\\services\\twilioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F5FF056-9EC2-4A99-AA7B-B1A82C9379D2}|EmpressOfLight\\EmpressOfLight.csproj|c:\\users\\administrator\\desktop\\empressoflight\\empressoflight\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5F5FF056-9EC2-4A99-AA7B-B1A82C9379D2}|EmpressOfLight\\EmpressOfLight.csproj|solutionrelative:empressoflight\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5F5FF056-9EC2-4A99-AA7B-B1A82C9379D2}|EmpressOfLight\\EmpressOfLight.csproj|c:\\users\\administrator\\desktop\\empressoflight\\empressoflight\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,30 +26,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TwilioService.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\EmpressOfLight\\EmpressOfLight\\Services\\TwilioService.cs",
               "RelativeDocumentMoniker": "EmpressOfLight\\Services\\TwilioService.cs",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\EmpressOfLight\\EmpressOfLight\\Services\\TwilioService.cs",
               "RelativeToolTip": "EmpressOfLight\\Services\\TwilioService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAA3AAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAqwBUAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-17T04:15:35.819Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\EmpressOfLight\\EmpressOfLight\\appsettings.json",
               "RelativeDocumentMoniker": "EmpressOfLight\\appsettings.json",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\EmpressOfLight\\EmpressOfLight\\appsettings.json",
               "RelativeToolTip": "EmpressOfLight\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-07-17T04:14:07.696Z",
               "EditorCaption": ""

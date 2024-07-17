@@ -16,7 +16,7 @@ namespace EmpressOfLight.Controllers
         [HttpPost]
         public async Task<IActionResult> ContactForm(string name, string email, string message)
         {
-            string phoneNumber = "+84394199177"; // Số điện thoại nhận tin nhắn
+            string phoneNumber = "+84******"; // Số điện thoại nhận tin nhắn
             string smsMessage = $"Name: {name}\nEmail: {email}\nMessage: {message}";
 
             _twilioService.SendSms(phoneNumber, smsMessage);

@@ -5950,11 +5950,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Source\\Repos\\EmpressOfLight\\EmpressOfLight\\EmpressOfLight.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\EmpressOfLight\\EmpressOfLight\\EmpressOfLight.csproj",
       "projectName": "EmpressOfLight",
-      "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\EmpressOfLight\\EmpressOfLight\\EmpressOfLight.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\EmpressOfLight\\EmpressOfLight\\EmpressOfLight.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Source\\Repos\\EmpressOfLight\\EmpressOfLight\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\EmpressOfLight\\EmpressOfLight\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",

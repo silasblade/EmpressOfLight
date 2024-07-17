@@ -299,3 +299,16 @@ C:\Users\Administrator\Source\Repos\EmpressOfLight\EmpressOfLight\bin\Debug\net8
 C:\Users\Administrator\Source\Repos\EmpressOfLight\EmpressOfLight\bin\Debug\net8.0\Twilio.dll
 C:\Users\Administrator\Source\Repos\EmpressOfLight\EmpressOfLight\bin\Debug\net8.0\Twilio.AspNet.Common.dll
 C:\Users\Administrator\Source\Repos\EmpressOfLight\EmpressOfLight\bin\Debug\net8.0\Twilio.AspNet.Core.dll
+C:\Users\Administrator\Desktop\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Administrator\Desktop\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Administrator\Desktop\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.RazorAssemblyInfo.cache
+C:\Users\Administrator\Desktop\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.RazorAssemblyInfo.cs
+C:\Users\Administrator\Desktop\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.sourcelink.json
+C:\Users\Administrator\Desktop\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.dll
+C:\Users\Administrator\Desktop\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\refint\EmpressOfLight.dll
+C:\Users\Administrator\Desktop\EmpressOfLight\EmpressOfLight\obj\Debug\net8.0\EmpressOfLight.pdb

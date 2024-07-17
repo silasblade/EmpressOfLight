@@ -15,10 +15,10 @@ namespace EmpressOfLight.Services
 
         public TwilioService(IConfiguration configuration)
         {
-            /*
+            
             _accountSid = configuration["Twilio:AccountSid"];
             _authToken = configuration["Twilio:AuthToken"];
-            _twilioPhoneNumber = configuration["Twilio:PhoneNumber"]; */
+            _twilioPhoneNumber = configuration["Twilio:PhoneNumber"];
             TwilioClient.Init(_accountSid, _authToken);
         }
 
@@ -35,23 +35,3 @@ namespace EmpressOfLight.Services
     }
 }
 
-/*
-class Example
-{
-    static void Main(string[] args)
-    {
-        var accountSid = "ACf2763a766b647b733aec3a5607eb9e37";
-        var authToken = "[AuthToken]";
-        TwilioClient.Init(accountSid, authToken);
-
-        var messageOptions = new CreateMessageOptions(
-          new PhoneNumber("+18777804236"));
-        messageOptions.From = new PhoneNumber("+19547168508");
-        messageOptions.Body = "hi";
-
-
-        var message = MessageResource.Create(messageOptions);
-        Console.WriteLine(message.Body);
-    }
-}
-*/

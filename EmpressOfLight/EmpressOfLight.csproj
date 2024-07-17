@@ -160,6 +160,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6" />
+    <PackageReference Include="Twilio" Version="7.2.2" />
+    <PackageReference Include="Twilio.AspNet.Core" Version="8.0.2" />
   </ItemGroup>
 
   <ItemGroup>

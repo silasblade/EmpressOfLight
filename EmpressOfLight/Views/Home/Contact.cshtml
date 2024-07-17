@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+<h1>Contact</h1>
+
+<form asp-action="ContactForm" method="post">
+    <input type="text" name="name" class="w-100 form-control border-0 py-3 mb-4" placeholder="Your Name" required>
+    <input type="number" name="phone" class="w-100 form-control border-0 py-3 mb-4" placeholder="Enter Your Phone Number" required>
+    <textarea name="message" class="w-100 form-control border-0 mb-4" rows="5" cols="10" placeholder="Your Message" required></textarea>
+    <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary" type="submit">Submit</button>
+</form>

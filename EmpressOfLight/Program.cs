@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
 builder.Services.AddHttpClient<RSSFeedService>();
 
 // Add services to the container.
@@ -22,6 +25,9 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("RequireAdminRole",
          policy => policy.RequireRole("Admin"));
 });
+
+builder.Services.AddSingleton<TwilioService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

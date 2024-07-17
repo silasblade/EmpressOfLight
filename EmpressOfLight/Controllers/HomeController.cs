@@ -1,5 +1,6 @@
-using EmpressOfLight.Data;
+﻿using EmpressOfLight.Data;
 using EmpressOfLight.Models;
+using EmpressOfLight.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,14 +14,16 @@ namespace EmpressOfLight.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<HomeController> _logger;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly TwilioService _twilioService;
 
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, TwilioService twilioService)
         {
             _context = context;
             this._userManager = userManager;
             _logger = logger;
             _roleManager = roleManager;
+            _twilioService = twilioService;
         }
 
         public async Task<IActionResult> Index()
@@ -49,6 +52,29 @@ namespace EmpressOfLight.Controllers
         {
             return View();
         }
+
+        // add contact test Twilio Home/Contact
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ContactForm(string name, string phone, string message)
+        {
+            string phoneNumber = "+18777804236"; // Số điện thoại nhận tin nhắn
+            string smsMessage = $"Name: {name}\nPhone: {phone}\nMessage: {message}";
+
+            _twilioService.SendSms(phoneNumber, smsMessage);
+
+            return RedirectToAction("ContactConfirmation");
+        }
+
+        public IActionResult ContactConfirmation()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

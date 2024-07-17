@@ -15,9 +15,10 @@ namespace EmpressOfLight.Services
 
         public TwilioService(IConfiguration configuration)
         {
+            /*
             _accountSid = configuration["Twilio:AccountSid"];
             _authToken = configuration["Twilio:AuthToken"];
-            _twilioPhoneNumber = configuration["Twilio:PhoneNumber"];
+            _twilioPhoneNumber = configuration["Twilio:PhoneNumber"]; */
             TwilioClient.Init(_accountSid, _authToken);
         }
 
